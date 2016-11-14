@@ -384,7 +384,7 @@ angular.module('app.controllers', [])
           { text: 'Close' },
           {
             text: '<b>Save</b>',
-            type: 'button-positive',
+            type: 'button-energized',
             onTap: function(e) {
               if (!$scope.data.nickname || !$scope.data.address || !$scope.data.pin || !$scope.data.phone ) {
                 e.preventDefault(); //don't allow the user to close unless he enters full details
@@ -400,7 +400,7 @@ angular.module('app.controllers', [])
 
         if(edit_val!=null) {
           //Update  address
-          if(res!=null){ // res ==null  => close 
+          if(res!=null){ // res ==null  => close
             fireBaseData.refUser().child($scope.user_info.uid).child("address").child(edit_val.$id).update({    // set
               nickname: res.nickname,
               address: res.address,
@@ -533,7 +533,7 @@ angular.module('app.controllers', [])
             user_name:$scope.user_info.displayName,
             address_id: address,
             payment_id: payment,
-            status: "Queued"
+            status: "Processing"
           });
 
         }
@@ -579,7 +579,7 @@ angular.module('app.controllers', [])
           { text: 'Close' },
           {
             text: '<b>Save</b>',
-            type: 'button-positive',
+            type: 'button-energized',
             onTap: function(e) {
               if (!$scope.data.nickname || !$scope.data.address || !$scope.data.pin || !$scope.data.phone ) {
                 e.preventDefault(); //don't allow the user to close unless he enters full details
@@ -614,7 +614,4 @@ angular.module('app.controllers', [])
       });
 
     };
-
-
   })
-
